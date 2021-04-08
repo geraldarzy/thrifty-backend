@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :items
+  resources :items do
+    resources :sexes
+  end
   resources :stores
   resources :users, only: [:index,:create,:update,:destroy]
   resources :sessions, only: [:create,:destroy]
