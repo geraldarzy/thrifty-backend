@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :cart_items
+  resources :carts
   resources :items, only: [:index]
   resources :sexes, only: [:show]
   resources :stores
