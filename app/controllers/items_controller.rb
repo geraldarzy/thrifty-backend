@@ -5,12 +5,17 @@ class ItemsController < ApplicationController
   def index
     @items = Item.all
 
-    render json: @items
+    render json: @items.to_json(include: [:store,:sex])
+    # render json: @items
   end
 
   # GET /items/1
   def show
-    render json: @item
+    # if params[:store_id]
+    #   store = Store.find(params[:store_id])
+      
+    # end
+    # render json: @item.to_json(:include => {:store})
   end
 
   # POST /items
