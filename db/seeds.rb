@@ -27,3 +27,10 @@ Item.create(store_id: b.id, name: 'Item', price: 5, size: 'xs', color: 'gray', p
 Item.create(store_id: b.id, name: 'Item', price: 5, size: 'xs', color: 'green', picture: 'https://img.ltwebstatic.com/images3_pi/2020/07/29/15959941961e99f6e1cdf80d38fc0613a3fb7f505d_thumbnail_600x.webp', sex: f)
 Item.create(store_id: b.id, name: 'Item', price: 5, size: 'xl', color: 'red', picture: 'https://m.media-amazon.com/images/I/61nKBWv5YpL._AC_UL320_.jpg', sex: f)
 Item.create(store_id: b.id, name: 'Item', price: 5, size: 'xl', color: 'green', picture: 'https://d2h1pu99sxkfvn.cloudfront.net/b0/1765380/367297467_A2iqIPXyTw/P0.jpg', sex: f)
+
+user = User.new(email: 'email@email.com', password:'password')
+cart = Cart.new
+user.cart = cart
+cart.user = user
+user.save
+
