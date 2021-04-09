@@ -16,7 +16,10 @@ class UsersController < ApplicationController
   # POST /users
   def create
     @user = User.new(user_params)
-
+    cart = Cart.new
+    @user.cart = cart
+    cart.user = @user
+    
     if @user.save
       session[:id] = @user.id
       session[:email] = @user.email
