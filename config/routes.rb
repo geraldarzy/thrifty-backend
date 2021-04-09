@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :items
+  resources :items, only: [:index]
   resources :sexes, only: [:show]
   resources :stores
   resources :users, only: [:index,:create,:update,:destroy]
