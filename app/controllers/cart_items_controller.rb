@@ -19,7 +19,7 @@ class CartItemsController < ApplicationController
     cart = user.cart
     @cart_item = CartItem.new(item_id:params['cart_item']['item_id'],cart_id: cart.id)
     if @cart_item.save
-      render json: @cart_item, status: :created, location: @cart_item
+      render json: @cart_item.to_json(include: [:item,:cart]), status: :created, location: @cart_item
     else
       render json: @cart_item.errors, status: :unprocessable_entity
     end
