@@ -11,7 +11,7 @@ class SexesController < ApplicationController
   # GET /sexes/1
   def show
     #show each sexes items instead 
-    render json: @sex.items
+    render json: @sex.items.to_json(include: [:store,:sex])
   end
 
   # POST /sexes
