@@ -31,9 +31,3 @@ Item.create(size:'Large',price: 15,color:'Yellow',name:'Tommy Light Jacket', pic
 Item.create(size:'Small',price: 8,color:'Blue',name:'Boston Collared Sweater', picture:'https://img.ltwebstatic.com/images3_pi/2020/09/17/1600321103eccb5de559fcd1622637e6edd53f184e_thumbnail_600x.webp',sex:f,store_id:p.id)
 
 
-user = User.new(email: 'email@email.com', password:'password')
-cart = Cart.new
-user.cart = cart
-cart.user = user
-user.save
-
