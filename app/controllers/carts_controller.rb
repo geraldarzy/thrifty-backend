@@ -10,7 +10,10 @@ class CartsController < ApplicationController
 
   # GET /carts/1
   def show
-    render json: @cart
+    render json: @cart.to_json(:include => {
+    :items => {:include => [:store, :sex],:except => [:created_at,:updated_at]},
+    :user => {:only => [:email]}
+    }, :except => [:updated_at])
   end
 
   # POST /carts
